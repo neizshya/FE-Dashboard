@@ -1,9 +1,7 @@
 .card-customers {
-    /* width: 85vw; */
-    /* height: 78px; */
+    padding: 1px;
     border-radius: 10px;
     border-color: white;
-    padding: 1vw;
 }
 
 .rounded-circle {
@@ -15,9 +13,8 @@
 .card-customers:hover {
     border-color: var(--Neutral-White-700);
 }
-
-.card-customers.active {
-    background-color: aqua;
+.card-customers:active {
+    background: var(--Neutral-White-400);
 }
 
 .name-customers {
@@ -36,7 +33,11 @@
 }
 
 .tight-col {
-    margin-right: -20px;
+    margin-right: -25px;
+}
+
+.card-detailCustomers {
+    border: none;
 }
 
 .block-edit {
@@ -60,6 +61,13 @@
     width: 78px;
     height: 78px;
     background: var(--success-100);
+    border-radius: 0px 10px 10px 0px;
+}
+.editCustomer:hover {
+    background: var(--success-200);
+}
+.editCustomer:active {
+    background: var(--success-400);
 }
 
 .form-edit-customer {
@@ -76,7 +84,7 @@
 .form-edit-customer .modal-content {
     margin-top: 3vh;
     width: 450px;
-    height: 850px;
+    height: 750px;
     background: #FFFFFF;
     box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1);
     border-radius: 10px;
@@ -92,13 +100,191 @@
     color: #030303;
 }
 
-.TextFieldInput {
-    background-color: #FF7F00;
+#password,
+#name,
+#username,
+#email,
+#phone,
+#address,
+#gender,
+#height,
+#weight,
+#goal_weight,
+#training_level {
+    background-color: var(--Neutral-White-700);
 }
+
+#password:focus,
+#name:focus,
+#username:focus,
+#email:focus,
+#phone:focus,
+#address:focus,
+#gender:focus,
+#height:focus,
+#weight:focus,
+#goal_weight:focus,
+#training_level:focus {
+    background-color: #FFFFFF;
+}
+
 
 .label-customer {
     font-weight: 400;
     font-size: 14px;
     line-height: 14px;
     color: #606060;
+}
+
+.btnUploadCustomer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    width: 87px;
+    height: 30px;
+    color: #FFFFFF;
+    background: var(--primary-500);
+    border-radius: 8px;
+
+}
+.btnUploadCustomer:hover {
+    background: var(--primary-300);
+    color: var(--primary-700);
+}
+
+.btnResetImgCustomer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    font-size: 14px;
+    width: 87px;
+    height: 30px;
+    color: var(--Danger-500);
+    border-color: var(--Danger-500);
+    border-radius: 8px;
+}
+.btnResetImgCustomer:hover {
+    background: var(--primary-300);
+    color: var(--primary-700);
+}
+
+.btnSaveCustomer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 26px;
+    font-size: 14px;
+    width: 96px;
+    height: 30px;
+    color: #FFFFFF;
+    background: var(--primary-500);
+    border-radius: 8px;
+
+}
+.btnSaveCustomer:hover {
+    background: var(--primary-300);
+    color: var(--primary-700);
+}
+
+.btnCancelCustomer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 26px;
+    font-size: 14px;
+    width: 96px;
+    height: 30px;
+    color: var(--Danger-500);
+    border-color: var(--Danger-500);
+    border-radius: 8px;
+}
+.btnCancelCustomer:hover {
+    background: var(--primary-300);
+    color: var(--primary-700);
+}
+
+.reset-password {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    height: 234px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1);
+    border-radius: 10px;
+}
+.modal-content {
+    width: 380px;
+    height: 234px;
+    background: #FFFFFF;
+}
+.content-reset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8%;
+}
+
+.buttonReset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnNoReset {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    width: 128px;
+    height: 36px;
+    color: var(--primary-500);
+    border-color: var(--primary-500);
+    border-radius: 8px;
+}
+.btnNoReset:hover {
+    background: var(--primary-300);
+    color: var(--primary-700);
+}
+
+.btnYesReset {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    width: 128px;
+    height: 36px;
+    color: var(--primary-100);
+    background: var(--primary-500);
+    border-radius: 8px;
+}
+.btnYesReset:hover {
+    background: var(--primary-300);
+    color: var(--primary-700);
+}
+
+.block-edit.hovered {
+    display: flex;
+}
+
+.block-edit.hovered .blockCustomer,
+.block-edit.hovered .editCustomer {
+    display: block;
 }

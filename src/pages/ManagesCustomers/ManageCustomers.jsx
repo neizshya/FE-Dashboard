@@ -5,6 +5,8 @@ import "../ManagesCustomers/ManageCustomers.css"
 import { useState } from "react"
 import CardCustomers from "../../elements/CardCustomers/CardCustomers"
 import CardDetailCustomers from "../../elements/CardCustomers/CardDetailCustomer"
+import CardCustomerBooking from "../../components/CardCustomerBooking/CardCustomerBooking"
+import PopUP from "./PopUpDetailClass"
 
 //Belum Selesai
 const ManageCustomers = () => {
@@ -30,16 +32,48 @@ const ManageCustomers = () => {
             goal_weight: 65,
             training_level: "Intermediate"
         },
-        
+        {
+            id: 3,
+            image: "https://source.unsplash.com/random/?profile",
+            name: "Mrs. Anna",
+            height: 160,
+            weight: 60,
+            goal_weight: 50,
+            training_level: "Intermediate"
+        },
+
     ])
 
     const [selectedCustomerId, setSelectedCustomerId] = useState(null);
 
     const getSelectedCustomer = () => {
         return customers.find(customer => customer.id === selectedCustomerId);
-      };
-      
+    };
 
+    const [booking, setBooking] = useState([
+        {
+            id: 1,
+            bookingType: 'Weekly',
+            periode: '30 April 2050',
+            session: '5AM - 12PM',
+            zoomCode: 'KSN-KNG-KSD',
+            classType: 'Online Class',
+            descClass: 'Private zoom with mentor',
+            status: 'booked'
+        },
+        {
+            id: 2,
+            bookingType: 'Weekly',
+            periode: '30 April 2050',
+            session: '5AM - 12PM',
+            zoomCode: 'KSN-KNG-KSD',
+            classType: 'Offline Class',
+            descClass: 'Private zoom with mentor',
+            status: 'booked-canceled'
+        },
+    ])
+
+    
     return (
         <>
             <div className="container manage-customer">
@@ -60,7 +94,7 @@ const ManageCustomers = () => {
                                 placeholder="Search customers"
                             />
                         </div>
-                       
+
                         <div className="col-12">
                             {
                                 customers.length > 0 ? (
@@ -89,17 +123,48 @@ const ManageCustomers = () => {
                     {isVisible ? <>
                         <div className="col-lg-8">
                             <h2 className='text-customers'>Details</h2>
-                            <CardDetailCustomers 
+                            <CardDetailCustomers
                                 customer={getSelectedCustomer()}
                             />
+                            <h3 style={{fontWeight:"600", fontSize:"24px", color:"#606060"}}>Activities</h3>
+                            {
+                                booking.map((booking) => {
+                                    return (
+                                        <CardCustomerBooking
+                                            image={'https://source.unsplash.com/random/?profile'}
+                                            name={booking.classType}
+                                            date={booking.descClass}
+                                            status={booking.status}
+                                            key={booking.id}
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#detailClass"
+                                        />
+                                    )
+                                })
+                            }
                         </div>
                     </> : <>  </>
                     }
 
                 </div>
-
             </div>
+            {/* <div
+                className="modal fade"
+                id="detailClass"
+                tabIndex={-1}
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+            >
+                <div className="modal-dialog detail-class">
+                    <div className="content-detailclass">
 
+                        <p style={{ fontWeight: "400", fontSize: "16px", color: "#000000", paddingTop: "4%" }}>
+                        </p>
+                    </div>
+
+                </div>
+            </div> */}
+            <PopUP />
         </>
     )
 }

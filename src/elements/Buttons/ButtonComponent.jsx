@@ -10,6 +10,7 @@ const ButtonComponent = ({
   imgUrlStart,
   imgUrlEnd,
   buttonName,
+  dataBsDismiss
 }) => {
   return (
     <div>
@@ -18,6 +19,7 @@ const ButtonComponent = ({
         className={className ? `btn ${className}` : "btn"}
         id={id}
         onClick={onClick}
+        data-bs-dismiss={dataBsDismiss}
       >
         {imgUrlStart && (
           <img
