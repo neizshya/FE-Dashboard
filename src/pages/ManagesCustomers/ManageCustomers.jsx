@@ -5,8 +5,7 @@ import "../ManagesCustomers/ManageCustomers.css"
 import { useState } from "react"
 import CardCustomers from "../../elements/CardCustomers/CardCustomers"
 import CardDetailCustomers from "../../elements/CardCustomers/CardDetailCustomer"
-import CardCustomerBooking from "../../components/CardCustomerBooking/CardCustomerBooking"
-import PopUP from "./PopUpDetailClass"
+//import PopUP from "./PopUpDetailClass"
 
 //Belum Selesai
 const ManageCustomers = () => {
@@ -127,7 +126,7 @@ const ManageCustomers = () => {
                                 customer={getSelectedCustomer()}
                             />
                             <h3 style={{fontWeight:"600", fontSize:"24px", color:"#606060"}}>Activities</h3>
-                            {
+                            {/* {
                                 booking.map((booking) => {
                                     return (
                                         <CardCustomerBooking
@@ -141,7 +140,7 @@ const ManageCustomers = () => {
                                         />
                                     )
                                 })
-                            }
+                            } */}
                         </div>
                     </> : <>  </>
                     }
@@ -164,7 +163,7 @@ const ManageCustomers = () => {
 
                 </div>
             </div> */}
-            <PopUP />
+            {/* <PopUP /> */}
         </>
     )
 }
