@@ -10,15 +10,21 @@ import "../CardCustomers/CardCustomer.css";
 import TextFieldPassword from "../TextField/TextFieldPassword";
 import TextField from "../TextField/TextField";
 import ButtonComponent from "../Buttons/ButtonComponent";
+import { useState } from "react";
 
 const CardDetailCustomers = ({ customer, onClickBlockCustomer, onClickEditCustomer }) => {
     console.log(customer);
-
+    const [hovered, setHovered] = useState(false);
     return (
 
         <>
             {customer && (
-                <Card className="card-detailCustomers w-100" id="card-customer">
+                <Card
+                    className={`card-detailCustomers w-100 ${hovered ? "hovered" : ""}`}
+                    id="card-customer"
+                    onMouseEnter={() => setHovered(true)}
+                    onMouseLeave={() => setHovered(false)}
+                >
                     <div className="row">
                         <div className="col-lg-1 mt-2">
                             <img src={customer.image} alt="Person" className="rounded-circle" />
@@ -46,19 +52,27 @@ const CardDetailCustomers = ({ customer, onClickBlockCustomer, onClickEditCustom
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-3 block-edit">
-                            <div className="blockCustomer">
-                                <img src={block} onClick={onClickBlockCustomer} alt="block" />
-                            </div>
-                            <div className="editCustomer">
-                                <img
-                                    src={edit}
-                                    onClick={onClickEditCustomer}
-                                    alt="edit"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#ModalEditCustomer" />
-                            </div>
+                        <div className={`col-lg-3 block-edit`}>
+                            {hovered && (
+                                <div className="block-edit-content">
+                                    <div className="block-edit-inner">
+                                        <div className="blockCustomer">
+                                            <img src={block} onClick={onClickBlockCustomer} alt="block" />
+                                        </div>
+                                        <div className="editCustomer">
+                                            <img
+                                                src={edit}
+                                                onClick={onClickEditCustomer}
+                                                alt="edit"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#ModalEditCustomer"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                         </div>
+
                     </div>
                 </Card>
             )}
@@ -120,19 +134,6 @@ const CardDetailCustomers = ({ customer, onClickBlockCustomer, onClickEditCustom
                                     <div className="col-6">
                                         <TextField
                                             classNameInput={'TextFieldInput'}
-                                            placeholder={'John'}
-                                            label={'Your Name'}
-                                            name={'name'}
-                                            id={'name'}
-                                            type={'text'}
-                                            // onChange={handleInput}
-                                            // value={data?.name}
-                                            classNameLabel={'label-customer'}
-                                        />
-                                    </div>
-                                    <div className="col-6">
-                                        <TextField
-                                            classNameInput={'TextFieldInput'}
                                             placeholder={'John_'}
                                             label={'Username'}
                                             name={'username'}
@@ -143,8 +144,6 @@ const CardDetailCustomers = ({ customer, onClickBlockCustomer, onClickEditCustom
                                             classNameLabel={'label-customer'}
                                         />
                                     </div>
-                                </div>
-                                <div className="row mt-2">
                                     <div className="col-6">
                                         <TextField
                                             classNameInput={'TextFieldInput'}
@@ -158,31 +157,7 @@ const CardDetailCustomers = ({ customer, onClickBlockCustomer, onClickEditCustom
                                             classNameLabel={'label-customer'}
                                         />
                                     </div>
-                                    <div className="col-6">
-                                        <TextField
-                                            classNameInput={'TextFieldInput'}
-                                            placeholder={'087388***'}
-                                            label={'Phone'}
-                                            name={'phone'}
-                                            id={'phone'}
-                                            type={'text'}
-                                            // onChange={handleInput}
-                                            // value={data?.name}
-                                            classNameLabel={'label-customer'}
-                                        />
-                                    </div>
                                 </div>
-                                <TextField
-                                    classNameInput={'TextFieldInput'}
-                                    placeholder={'Jl.Budi Utomo'}
-                                    label={'Address'}
-                                    name={'address'}
-                                    id={'address'}
-                                    type={'text'}
-                                    // onChange={handleInput}
-                                    // value={data?.name}
-                                    classNameLabel={'label-customer mt-3'}
-                                />
                                 <div className="row mt-2">
                                     <div className="col-6">
                                         <TextField
@@ -239,6 +214,12 @@ const CardDetailCustomers = ({ customer, onClickBlockCustomer, onClickEditCustom
                                         />
                                     </div>
                                 </div>
+                                {/* <div className="row mt-2">
+                                    <div className="col-6">
+                                    </div>
+                                    <div className="col-6">
+                                    </div>
+                                </div> */}
                                 <TextField
                                     classNameInput={'TextFieldInput'}
                                     placeholder={'Beginner'}
@@ -252,7 +233,7 @@ const CardDetailCustomers = ({ customer, onClickBlockCustomer, onClickEditCustom
                                 />
                             </form>
                         </div>
-                        <div style={{ display: "flex", marginTop: "6%" }}>
+                        <div style={{ display: "flex", marginTop: "13%" }}>
                             <div style={{ marginLeft: "52%", marginRight: "5%" }}>
                                 <ButtonComponent
                                     type={"button"}

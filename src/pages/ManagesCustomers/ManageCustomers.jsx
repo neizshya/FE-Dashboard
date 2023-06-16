@@ -125,7 +125,7 @@ const ManageCustomers = () => {
                             <CardDetailCustomers
                                 customer={getSelectedCustomer()}
                             />
-                            <h3 style={{fontWeight:"600", fontSize:"24px", color:"#606060"}}>Activities</h3>
+                            <h3 className="mt-2" style={{fontWeight:"600", fontSize:"24px", color:"#606060"}}>Activities</h3>
                             {/* {
                                 booking.map((booking) => {
                                     return (

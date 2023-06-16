@@ -4,15 +4,30 @@
     border-color: white;
 }
 
+.card-detailCustomers .block-edit {
+    display: flex;
+    align-items: center;
+}
+
+.card-detailCustomers.hovered .block-edit {
+    display: flex;
+    align-items: center;
+}
+
+.block-edit-inner {
+    display: flex;
+}
+
 .rounded-circle {
-    width: 50px;
-    height: 50px;
+    width: 50px !important;
+    height: 50px !important;
     margin: 5px 5px 5px 2px;
 }
 
 .card-customers:hover {
     border-color: var(--Neutral-White-700);
 }
+
 .card-customers:active {
     background: var(--Neutral-White-400);
 }
@@ -63,9 +78,11 @@
     background: var(--success-100);
     border-radius: 0px 10px 10px 0px;
 }
+
 .editCustomer:hover {
     background: var(--success-200);
 }
+
 .editCustomer:active {
     background: var(--success-400);
 }
@@ -75,7 +92,7 @@
     flex-direction: column;
     align-items: center;
     width: 639px;
-    height: 940px;
+    height: 800px;
     background: #FFFFFF;
     box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1);
     border-radius: 10px;
@@ -84,7 +101,7 @@
 .form-edit-customer .modal-content {
     margin-top: 3vh;
     width: 450px;
-    height: 750px;
+    height: 650px;
     background: #FFFFFF;
     box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1);
     border-radius: 10px;
@@ -150,6 +167,7 @@
     border-radius: 8px;
 
 }
+
 .btnUploadCustomer:hover {
     background: var(--primary-300);
     color: var(--primary-700);
@@ -168,6 +186,7 @@
     border-color: var(--Danger-500);
     border-radius: 8px;
 }
+
 .btnResetImgCustomer:hover {
     background: var(--primary-300);
     color: var(--primary-700);
@@ -187,6 +206,7 @@
     border-radius: 8px;
 
 }
+
 .btnSaveCustomer:hover {
     background: var(--primary-300);
     color: var(--primary-700);
@@ -205,6 +225,7 @@
     border-color: var(--Danger-500);
     border-radius: 8px;
 }
+
 .btnCancelCustomer:hover {
     background: var(--primary-300);
     color: var(--primary-700);
@@ -222,11 +243,13 @@
     box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1);
     border-radius: 10px;
 }
+
 .modal-content {
     width: 380px;
     height: 234px;
     background: #FFFFFF;
 }
+
 .content-reset {
     display: flex;
     flex-direction: column;
@@ -256,6 +279,7 @@
     border-color: var(--primary-500);
     border-radius: 8px;
 }
+
 .btnNoReset:hover {
     background: var(--primary-300);
     color: var(--primary-700);
@@ -275,6 +299,7 @@
     background: var(--primary-500);
     border-radius: 8px;
 }
+
 .btnYesReset:hover {
     background: var(--primary-300);
     color: var(--primary-700);
