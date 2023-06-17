@@ -15,7 +15,7 @@ const useAxios = ({ api, method, url, body, header }) => {
   const [isLoading, setIsLoading] = useState(true);
   const fetchData = async () => {
     try {
-      api[method](url, JSON.parse(header), JSON.parse(body))
+      api[method](url, JSON.parse(body))
         .then((res) => {
           setResponse(res.data);
         })
@@ -31,6 +31,18 @@ const useAxios = ({ api, method, url, body, header }) => {
     }
   };
   useEffect(() => {
+    if (header) {
+      api.interceptors.request.use(
+        (config) => {
+          config.headers = JSON.parse(header);
+          return config;
+        },
+        (error) => {
+          console.log(`error intercepter => `, error);
+          return Promise.reject(error);
+        }
+      );
+    }
     fetchData();
   }, [api, body, method, url]);
 

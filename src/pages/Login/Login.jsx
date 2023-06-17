@@ -96,6 +96,7 @@ const Login = () => {
   useEffect(() => {
     if (response !== null) {
       // setUserSession(response.token, response.data);
+      console.log(response.token);
       dispatch(addToken(response.token));
       let adminAuth = jwtDecode(response.token);
       // ;
