@@ -20,6 +20,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [bodyApi, setBodyApi] = useState({
+    header: null,
+
     method: "",
     url: "",
     body: null,
@@ -35,9 +37,7 @@ const Login = () => {
     method: bodyApi.method,
     url: bodyApi.url,
     body: bodyApi.body,
-    header: JSON.stringify({
-      accept: "application/json",
-    }),
+    header: bodyApi.header,
   });
 
   const handleLogin = (e) => {
@@ -49,6 +49,9 @@ const Login = () => {
         body: JSON.stringify({
           email: email,
           password: password,
+        }),
+        header: JSON.stringify({
+          accept: "application/json",
         }),
       });
       fetchData();
