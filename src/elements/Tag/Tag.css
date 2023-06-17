@@ -30,12 +30,22 @@
     color: var(--Neutral-Black-500);
 }
 
+.tag-completed {
+    background-color: var(--success-100);
+    color: var(--Neutral-Black-500);
+}
+
 .tag-pending {
     background-color: var(--primary-100);
     color: var(--Neutral-Black-500);
 }
 
 .tag-cancel {
+    background-color: var(--Danger-100);
+    color: var(--Neutral-Black-500);
+}
+
+.tag-canceled {
     background-color: var(--Danger-100);
     color: var(--Neutral-Black-500);
 }

@@ -73,7 +73,7 @@
 
 /* template classname 3 */
 
-.btn-sidebar {
+/* .btn-sidebar {
     background-color: var(--Neutral-white-200);
     padding: 12px 24px 12px 24px;
     margin: 20px 18px;
@@ -83,7 +83,7 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 20px;
-    /* outline: 3px solid var(--Neutral-Black-900); */
+    outline: 3px solid var(--Neutral-Black-900);
 
     transition: 0.4s;
 }
@@ -98,4 +98,7 @@
     background-color: var(--primary-300);
     color: var(--primary-900);
     transform: scale(1.02);
-}
+} */
+
+/* ngisi classnamenya enak bikin file css lagi di folder tujuan sama file tujuan.
+klo disini nanti bingung. */

@@ -1,29 +1,79 @@
+import { Dropdown } from "react-bootstrap"
 import ButtonComponent from "../../elements/Buttons/ButtonComponent"
 import './Recomended.css'
+import { useState } from "react"
 
-const CardAdd = () => {
+const CardAdd = ({handleSubmit, handleSave, HandleClose, handleChange, workoutList, levelList, valueLevel, valueWorkout, nameLevel, nameWorkout}) => {
+
+    const Select = ({onSelect,  name,  options, className}) => {
+        return (
+            <>         
+                <select 
+                    id={name}  
+                    // disabled={value.length === 1}
+                    className={className}
+                    name={name} 
+                    onChange={onSelect}
+                >
+                    {
+                        options?.map(option => (
+                            <option 
+                                key={option.value}
+                                value={option.value}
+                                >
+                                    {option.text}
+                                </option>
+                        ))
+                    }
+                </select>
+    
+            </>
+        )
+    }
+
+   
+    
+
     return(
         <div className="cardAdd">
-            <div className="d-flex flex-column" style={{width:'100%'}}>
-                <select>
-                    <option disabled selected hidden>Choose Level</option>
-                    <option value="">hahai</option>
-                    <option value="">dds</option>
-                </select>
-                <select>
-                    <option>Choose Work Out</option>
-                </select>
-            </div>
-            <div className="d-flex flex-row justify-content-around mt-3">
-                <ButtonComponent
-                    buttonName={'Close'}
-                    className={'btn-cancel'}
+            <form 
+                className="d-flex flex-column" 
+                style={{width:'100%'}}
+                onSubmit={handleSubmit}
+            >
+                < Select 
+                    name={nameLevel}
+                    value = {valueLevel}
+                    options= {levelList}
+                    onSelect={handleChange}
                 />
-                <ButtonComponent
-                    buttonName={'Save'}
-                    className={'btn-save'}
+                {/* <select>
+                    <option selected disabled  hidden>Choose Level</option>
+                    <option defaultValue={'Beginner'}>Beginner</option>
+                    <option defaultValue={'Intermediate'}>Intermediate</option>
+                    <option defaultValue={'Advanced'}>Advanced</option>
+                </select> */}
+                < Select 
+                    name={nameWorkout}
+                    value = {valueWorkout}
+                    options= {workoutList}
+                    onSelect={handleChange}
                 />
-            </div>
+                <div className="d-flex flex-row justify-content-around mt-3">
+                    <ButtonComponent
+                        buttonName={'Close'}
+                        onClick={HandleClose}
+                        className={'btnCancel'}
+                    />
+                    <ButtonComponent
+                        buttonName={'Save'}
+                        type={'submit'}
+                        onClick={handleSave}
+                        className={'btnSave'}
+                    />
+                </div>
+            </form>
+
         </div>
     )
 }

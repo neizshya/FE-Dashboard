@@ -1,11 +1,13 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
+import './Chart.css'
 
-const Bar = ({colorBar,colorBackgroundBar}) => {
+const Bar = ({colorBar,colorBackgroundBar, name, data}) => {
   const dataChart = {
-    series: [{
-      name: 'Daily',
-      data: [145],
+    series: [
+      {
+      name: name,
+      data: [data],
     },
     // {
     //     name: 'Target',
@@ -18,7 +20,11 @@ const Bar = ({colorBar,colorBackgroundBar}) => {
         height: 350,
         type: 'bar',
         stacked: true,
-        stackType:'100'
+        stackType:'100',
+        offsetX:-70,
+        toolbar: {
+          show: false
+        },
       },
       grid: {
         xaxis: {
@@ -36,25 +42,37 @@ const Bar = ({colorBar,colorBackgroundBar}) => {
         bar: {
           horizontal: true,
           distributed:true,
-          borderRadius:10,
+          borderRadius:5,
           borderRadiusApplication: 'around',
           colors: {
               backgroundBarColors: [colorBackgroundBar],
               backgroundBarOpacity: 1,
-              backgroundBarRadius: 10
+              backgroundBarRadius: 5
             }
         },
       },
       yaxis:{
         labels:{
-            show:false,
+            show:true,
+            offsetX:125,
+            offsetY:-20,
+            style : {
+              fontFamily: 'Josefin Sans, sans-serif',
+              fontWeight:600,
+              fontSize:14
+            },
+          },
         },
-      },
-      dataLabels: {
-        enabled: false,
+        dataLabels: {
+          enabled: true,
+          offsetX: 300,
+          offsetY: -20,
+          style:{
+            colors: [colorBar]
+          },
       },
       xaxis: {
-        categories: ['Monthly'],
+        categories: [name],
         labels:{
             show:false,
         },
@@ -77,12 +95,14 @@ const Bar = ({colorBar,colorBackgroundBar}) => {
   };
 
   return (
-    <div>
+    <div className="">
       <ReactApexChart
+        className=' barChart m-0'
+        style={{width:''}}
         options={dataChart.options}
         series={dataChart.series}
         type="bar"
-        height={70}
+        height={60}
       />
     </div>
   );

@@ -1,0 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&family=Poppins&family=Roboto&family=Work+Sans&display=swap");
+
+.dashboard {
+    background-color: var(--Neutral-White-100);
+    font-family: 'Josefin Sans', sans-serif
+}

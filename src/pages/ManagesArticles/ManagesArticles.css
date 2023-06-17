@@ -1,0 +1,22 @@
+.manage-articles {
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 68px 27px 49px 34px;
+}
+
+.newsletter-articles{
+    margin-bottom: 50px;
+}
+
+.newsletter-articles-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    padding-top: 50px;
+}
+
+.newsletter-articles-card {
+    display: flex;
+    gap: 50px;
+    padding-top: 50px;
+}

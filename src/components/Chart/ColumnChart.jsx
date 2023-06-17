@@ -2,22 +2,9 @@ import React, { Component } from "react";
 import ReactApexChart from "react-apexcharts";
 import './Chart.css'
 
-class ColumnChart extends Component {
-    constructor(props) {
-      super(props);
-
-      this.state = {
-      
-        series: [{
-          name: 'Easy',
-          data: [44, 55, 41, 67, 22, 43, 44, 55, 41, 67, 22, 43]
-        }, {
-          name: 'Usual',
-          data: [13, 23, 20, 8, 13, 27, 13, 23, 20, 8, 13, 27]
-        }, {
-          name: 'Exhausted',
-          data: [11, 17, 15, 15, 21, 14, 11, 17, 15, 15, 21, 14]
-        }],
+const ColumnChart = ({series}) => {
+  const dataChart = {
+        series: series,
         options: {
           chart: {
             type: 'bar',
@@ -94,26 +81,20 @@ class ColumnChart extends Component {
       
       
       };
-    }
-
-  
-
-    render() {
-      return (
-        <div className="columnChart mb-5 mt-5">
-            <p className="ps-3 pt-3 p-0 m-0 fs-3 fw-semibold">Satisfaction Level</p>
-            <div id="chart">
-            <ReactApexChart options={this.state.options} series={this.state.series} type="bar" height={350} />
-            </div>
+    
+  return (
+    <div className="columnChart mb-5 mt-5">
+        <p className="ps-3 pt-3 p-0 m-0 fs-3 fw-semibold">Satisfaction Level</p>
+        <div id="chart">
+        <ReactApexChart 
+          options={dataChart.options} 
+          series={dataChart.series} 
+          type="bar" 
+          height={350} 
+        />
         </div>
-        
+    </div>
+  );
+}
 
-
-
-      );
-    }
-  }
-
-//   const domContainer = document.querySelector('#app');
-//   ReactDOM.render(React.createElement(ApexChart), domContainer);
 export default ColumnChart

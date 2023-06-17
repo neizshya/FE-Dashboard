@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import './Chart.css'
+import { useNavigate } from "react-router-dom";
 
-const RadialBar = ({colorText, colorBackground, series, text}) => {
+const RadialBar = ({colorText, colorBackground, series, text, level}) => {
+  const navigate = useNavigate()
+
+  const [bg, setBg] = useState(false)
+  const handleBg = () => {
+    setBg(!bg);
+    navigate(`/levelDetail/${level}`, { state: { level: level } });
+  }
     const dataChart = {
       
         series: [series],
@@ -51,10 +59,16 @@ const RadialBar = ({colorText, colorBackground, series, text}) => {
     
 
       return (
-        <div className="radialBarCard p-4 pe-5 ps-5">
+        <div 
+          onClick={handleBg}
+          className={`radialBarCard mb-4 p-4 pe-5 ps-5 col-sm-6  col-lg-3`}
+          style={{ backgroundColor: bg ? `${colorBackground}` : 'white' }}
+
+        >
           <p className="fw-bold fs-1">{text}</p>
           <div id="chart">
             <ReactApexChart 
+              className='ReactApexChart'
               options={dataChart.options} 
               series={dataChart.series} 
               type="radialBar" 

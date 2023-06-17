@@ -42,11 +42,12 @@
 .parentCardTraining{
     box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1);
     cursor: pointer;
-    width: 28vw;
+    /* width: 28vw; */
 }
 
 .cardTraining img{
-    width:  28vw;
+    /* width:  28vw; */
+    /* height: 19em; */
     transition: 0.5s all ease-in-out;
     background-color: #151515;
 }
@@ -57,4 +58,8 @@
 
 .cardTraining:active img{
     opacity: 0.35;
+}
+
+.text-hover:hover{
+    background-color: var(--primary-200);
 }

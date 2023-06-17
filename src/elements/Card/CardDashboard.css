@@ -1,0 +1,48 @@
+.cardDashboard {
+    width: 100%;
+    height: 100%;
+
+    background: var(--Neutral-White-0);
+    border-radius: 20px;
+}
+
+.rowContent {  
+   padding: 3% 9% 7% 7%;
+   /* padding: 2vh 4vh 6vh 4vh; */
+}
+
+.text1 {
+    font-size: 14px;
+    color: #0B0B0B;
+    font-weight: 700;
+}
+
+.text3 {
+    font-size: 20px;
+    color: #0B0B0B;
+    font-weight: 600;
+}
+
+.text24 {
+    font-size: 14px;
+    color: #0B0B0B;
+    font-weight: 600;
+}
+
+.text5 {
+    font-size: 10px;
+    color: var(--Neutral-White-800);
+    font-weight: 600;
+}
+
+.text6 {
+    font-size: 10px;
+    color: var(--success-900);
+    font-weight: 600;
+}
+
+.text7 {
+    font-size: 8px;
+    color: var(--Neutral-White-800);
+    font-weight: 600;
+}

@@ -5,9 +5,7 @@ import "../ManagesCustomers/ManageCustomers.css"
 import { useState } from "react"
 import CardCustomers from "../../elements/CardCustomers/CardCustomers"
 import CardDetailCustomers from "../../elements/CardCustomers/CardDetailCustomer"
-//import PopUP from "./PopUpDetailClass"
 
-//Belum Selesai
 const ManageCustomers = () => {
 
     const [isVisible, setIsVisible] = useState(false)
@@ -31,16 +29,6 @@ const ManageCustomers = () => {
             goal_weight: 65,
             training_level: "Intermediate"
         },
-        {
-            id: 3,
-            image: "https://source.unsplash.com/random/?profile",
-            name: "Mrs. Anna",
-            height: 160,
-            weight: 60,
-            goal_weight: 50,
-            training_level: "Intermediate"
-        },
-
     ])
 
     const [selectedCustomerId, setSelectedCustomerId] = useState(null);
@@ -48,30 +36,6 @@ const ManageCustomers = () => {
     const getSelectedCustomer = () => {
         return customers.find(customer => customer.id === selectedCustomerId);
     };
-
-    const [booking, setBooking] = useState([
-        {
-            id: 1,
-            bookingType: 'Weekly',
-            periode: '30 April 2050',
-            session: '5AM - 12PM',
-            zoomCode: 'KSN-KNG-KSD',
-            classType: 'Online Class',
-            descClass: 'Private zoom with mentor',
-            status: 'booked'
-        },
-        {
-            id: 2,
-            bookingType: 'Weekly',
-            periode: '30 April 2050',
-            session: '5AM - 12PM',
-            zoomCode: 'KSN-KNG-KSD',
-            classType: 'Offline Class',
-            descClass: 'Private zoom with mentor',
-            status: 'booked-canceled'
-        },
-    ])
-
     
     return (
         <>
@@ -93,7 +57,6 @@ const ManageCustomers = () => {
                                 placeholder="Search customers"
                             />
                         </div>
-
                         <div className="col-12">
                             {
                                 customers.length > 0 ? (

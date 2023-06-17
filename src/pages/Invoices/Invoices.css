@@ -1,0 +1,31 @@
+.status-Pending{
+    border-color: var(--Danger-500) !important;
+    color: var(--Danger-500) !important;
+}
+
+.status-Canceled{
+    border-color: var(--Neutral-White-800) !important;
+    color: var(--Neutral-White-800) !important;
+}
+
+.status-Completed{
+    border-color: var(--success-500) !important;
+    color: var(--success-500) !important;
+}
+
+.rotated-svg {
+    transform: rotate(-180deg);
+}
+
+.btn-sort-down{
+    margin-top: -10px;
+}
+
+.btn-sort{
+    color: var(--Neutral-White-600);
+    font-size: 12px;
+}
+
+.btn-sort:hover path{
+    fill: var(--Neutral-Black-900);
+}
