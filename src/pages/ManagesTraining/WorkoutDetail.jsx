@@ -5,9 +5,9 @@ import './ManagesTraining.css'
 import { useEffect, useState } from "react";
 import add from '../../assets/icons/add.svg'
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import useAxios from "../../api/UseAxios";
 import { trainingApi } from "../../api/Api";
 import VideoTraining from "../../components/Form/VideoTraining";
+import useAxios from "../../api/useAxios";
 
 const WorkoutDetail = () => {
     const location = useLocation()

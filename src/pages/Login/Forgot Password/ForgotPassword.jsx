@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import bgimg from "../../../assets/gif/gif-1.gif";
 import forgoticons from "../../../assets/icons/forgot_password.svg";
 import "./ForgotPassword.css";
 import TextField from "../../../elements/TextField/TextField";

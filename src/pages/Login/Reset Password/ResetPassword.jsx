@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
-import bgimg from "../../../assets/gif/gif-1.gif";
 import forgoticons from "../../../assets/icons/forgot_password.svg";
 import "./ResetPassword.css";
 import TextField from "../../../elements/TextField/TextField";

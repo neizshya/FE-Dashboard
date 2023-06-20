@@ -10,10 +10,10 @@ import add from '../../assets/icons/add.svg'
 import { Row, Col } from "react-bootstrap";
 import moment from 'moment';
 import axios from "axios";
-import useAxios from "../../api/UseAxios";
 import { classApi } from "../../api/Api";
 import { useParams } from 'react-router-dom';
 import { addOnlineClass } from "../../redux/Slice/classOnlineSlice";
+import useAxios from "../../api/useAxios";
 
 
 

@@ -3,7 +3,7 @@
 
 import CardCustomerBooking from "../CardCustomerBooking/CardCustomerBooking"
 import CartIcon from '../../assets/icons/cart.svg'
-import CalendarIcon from '../../assets/icons/calendar.svg'
+import CalendarIcon from '../../assets/icons/Calendar.svg'
 import TimeIcon from '../../assets/icons/time.svg'
 import CodeIcon from '../../assets/icons/code.svg'
 import { Col, Row } from "react-bootstrap"

@@ -9,11 +9,11 @@ import AddLess from "../AddLess/AddLess";
 import { useDispatch } from "react-redux";
 import { addTraining } from "../../redux/Slice/trainingSlice";
 import { trainingApi } from '../../api/Api';
-import useAxios from '../../api/UseAxios';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { storage } from '../../Config/FirebaseConfig';
+import useAxios from '../../api/useAxios';
 
 export default function Training({title, text, imgBtn, className }) {
     const [show, setShow] = useState(false);

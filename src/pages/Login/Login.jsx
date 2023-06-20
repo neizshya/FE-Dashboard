@@ -1,5 +1,4 @@
 import "./Login.css";
-import LoginImg from "../../assets/gif/Login.gif";
 
 import TextField from "../../elements/TextField/TextField";
 
@@ -11,8 +10,8 @@ import { adminApi } from "../../api/Api";
 import jwtDecode from "jwt-decode";
 import { useDispatch, useSelector } from "react-redux";
 import { addToken } from "../../redux/Slice/tokenSlice";
-import useAxios from "../../api/UseAxios";
 import { addUser } from "../../redux/Slice/usersSlice";
+import useAxios from "../../api/useAxios";
 const Login = () => {
   const users = useSelector((state) => state.users);
 
@@ -90,7 +89,9 @@ const Login = () => {
         <div className="row">
           <div className="col-6 d-none d-md-block">
             <img
-              src={LoginImg}
+              src={
+                "https://firebasestorage.googleapis.com/v0/b/capstone-45030.appspot.com/o/Login.gif?alt=media&token=47c4190e-284a-4971-866c-8d4be44f6242"
+              }
               alt=""
               style={{ height: "100vh", width: "55vw" }}
             />

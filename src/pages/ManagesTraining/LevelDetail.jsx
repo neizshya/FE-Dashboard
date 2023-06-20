@@ -7,9 +7,9 @@ import add from "../../assets/icons/add.svg";
 import AddTraining from "../../components/Form/Training";
 import { useSelector } from "react-redux";
 import { classApi, trainingApi } from "../../api/Api";
-import useAxios from "../../api/UseAxios";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useAxios from "../../api/useAxios";
 
 const LevelDetail = () => {
   const navigate = useNavigate();

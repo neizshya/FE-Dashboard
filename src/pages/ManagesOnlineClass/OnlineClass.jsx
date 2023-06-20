@@ -9,9 +9,9 @@ import { useDispatch, useSelector } from "react-redux"
 import AddOnlineClass from "../../components/Form/OnlineClass"
 import { classApi } from "../../api/Api"
 import { useEffect, useState } from "react"
-import useAxios from "../../api/UseAxios"
 import axios from "axios"
 import addSmall from '../../assets/icons/add_small.svg'
+import useAxios from "../../api/useAxios"
 
 const OnlineClass = () => {
     const navigate = useNavigate()

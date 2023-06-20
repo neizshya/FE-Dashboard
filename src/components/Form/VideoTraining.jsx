@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import Form from "../Modal/Form";
-import useAxios from "../../api/UseAxios";
 import { trainingApi } from "../../api/Api";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import video from '../../assets/icons/videocam_gray.svg'
@@ -10,6 +9,7 @@ import Button from 'react-bootstrap/Button'
 import {Modal} from 'react-bootstrap'
 import TextField from "../../elements/TextField/TextField";
 import Textarea from "../../elements/TextField/Textarea";
+import useAxios from "../../api/useAxios";
 
 export default function VideoTraining({className, imgBtn, text}) {
 
