@@ -76,8 +76,8 @@ const Login = () => {
   };
   const handleAdmin = () => {
     setMetadata({
-      message: "You are not admin",
-      error_reason: "please login using admin account",
+      message: "Please login using admin account",
+      error_reason: "You are not using admin account.",
       status_code: "-",
     });
     setShow(true);
